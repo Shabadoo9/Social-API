@@ -9,7 +9,7 @@ const reactionSchema = new Schema(
         reactionBody: {
             type: String,
             required: true,
-            maxlength: 280,
+            max_length: 280,
         },
         username: {
             type: String,
@@ -17,9 +17,9 @@ const reactionSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now,
-            get: function (date) {
-                return new Date(date).toLocaleString();
+            defualt: Date.now(),
+            get: (date) => {
+                return date.toLocaleString();
             },
         }
     },
